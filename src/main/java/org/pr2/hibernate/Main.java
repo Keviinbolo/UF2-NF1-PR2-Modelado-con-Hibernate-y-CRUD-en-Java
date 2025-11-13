@@ -109,10 +109,10 @@ public class Main {
         System.out.print("Título del juego: ");
         game.setTitle(scanner.nextLine());
         System.out.print("Fecha de lanzamiento (dd/MM/yyyy): ");
-        // Nota: Asumiendo un simple Date parsing; usa una librería como SimpleDateFormat en producción
+
         String fechaStr = scanner.nextLine();
         try {
-            Date releaseDate = new Date(); // Placeholder; implementa parsing real
+            Date releaseDate = new Date();
             game.setReleaseDate(releaseDate);
         } catch (Exception e) {
             System.out.println("Fecha inválida, se usará fecha actual.");
@@ -122,7 +122,6 @@ public class Main {
         scanner.nextLine();
         System.out.print("Resumen: ");
         game.setSummary(scanner.nextLine());
-        // Otros campos opcionales...
 
         gameDAO.guardar(game);
         System.out.println("Juego creado con ID: " + game.getIdGame());
@@ -160,7 +159,7 @@ public class Main {
         Game game = gameDAO.obtenerPorId(id);
         if (game != null) {
             System.out.println("Juego encontrado: " + game.getTitle() + ", Rating: " + game.getRating());
-            // Mostrar relaciones si existen
+
             if (game.getReviews() != null) {
                 System.out.println("Número de reseñas: " + game.getReviews().size());
             }
@@ -203,7 +202,7 @@ public class Main {
         }
     }
 
-    // Menú para Equipos (similar estructura)
+    // Menú para Equipos
     private static void menuGestionEquipos() {
         int opcion;
         do {
@@ -308,7 +307,7 @@ public class Main {
         }
     }
 
-    // Menú para Géneros (similar a Equipos)
+    // Menú para Géneros
     private static void menuGestionGeneros() {
         int opcion;
         do {
@@ -413,7 +412,7 @@ public class Main {
         }
     }
 
-    // Menú para Reseñas (similar a otros)
+    // Menú para Reseñas
     private static void menuGestionResenas() {
         int opcion;
         do {
