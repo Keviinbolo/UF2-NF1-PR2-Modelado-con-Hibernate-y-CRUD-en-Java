@@ -9,6 +9,7 @@ import org.pr2.hibernate.util.HibernateUtil;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 public class ReviewDAO {
 
@@ -44,7 +45,7 @@ public class ReviewDAO {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Transaction tx = session.beginTransaction();
             Query<Review> query = session.createQuery(hql, Review.class);
-            query.setParameter("id", id);
+            query.setParameter("id", Optional.of(id));
             Review review = query.uniqueResult();
             tx.commit();
             return review;
