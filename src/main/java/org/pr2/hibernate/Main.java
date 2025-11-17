@@ -3,10 +3,10 @@ package org.pr2.hibernate;
 
 import org.pr2.hibernate.DAO.*;
 import org.pr2.hibernate.Entidades.*;
-import java.util.HashSet;
+
 import java.util.List;
 import java.util.Scanner;
-import java.util.Set;
+
 import java.util.Date;
 
 public class Main {
